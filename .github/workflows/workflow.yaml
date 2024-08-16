@@ -1,30 +1,21 @@
-name: Continuos Integration
+name: Continuous Integration
 
 on: [push]
 
 jobs:
-  continuos-integration:
+  continuous-integration:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v3
-      - name: Using Nodejs
+
+      - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: v20.12.x
-      - name: Install Docker
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y docker.io
-          sudo systemctl start docker
-          sudo systemctl enable docker
-
-      - name: Verify Docker installation
-        run: docker --version
+          node-version: '20.x'
 
       - name: Install dependencies
         run: npm install
 
       - name: Build and test
-        run: |
-          npm run test
+        run: npm run test
