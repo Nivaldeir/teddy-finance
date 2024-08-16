@@ -5,4 +5,5 @@ const createTable = async (client: PgAdapter) => {
   await client.query(sql);
 };
 
+
 export { createTable };
