@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "incremental": true /* Save .tsbuildinfo files to allow for incremental compilation of projects. */,
+    "typeRoots": [
+      "./node_modules/@types",
+      "types/globals.d.ts"
+    ], /* Language and Environment */
+    "resolveJsonModule": true,
+    "target": "ES2021" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
+    "experimentalDecorators": true, /* Enable experimental support for legacy experimental decorators. */
+    "module": "commonjs" /* Specify what module code is generated. */,
+    "outDir": "./dist" /* Specify an output folder for all emitted files. */,
+    "esModuleInterop": true /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */,
+    "forceConsistentCasingInFileNames": true /* Ensure that casing is correct in imports. */,
+    "strict": true /* Enable all strict type-checking options. */,
+    "strictPropertyInitialization": false, /* Check for class properties that are declared but not set in the constructor. */
+    "skipLibCheck": true /* Skip type checking all .d.ts files. */
+  },
+  "include": [
+    "src/**/*.ts",
+    "types/global.d.ts",
+    "init.sql",
+  ],
+  "exclude": [
+    "test/*"
+  ]
+}

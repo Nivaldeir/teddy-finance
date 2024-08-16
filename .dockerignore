@@ -1,0 +1,12 @@
+*.log
+*.tmp
+
+node_modules/
+build/
+dist/
+
+.env
+*.local
+
+Dockerfile.dev
+README.md
