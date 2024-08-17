@@ -82,7 +82,7 @@ export default class ExpressAdapter implements IHttpServer {
 
   listen(port: number): void {
     this.app.listen(port);
-    Logger.instance.success(`SWAGGER: ${port}`);
-    Logger.instance.success(`SWAGGER: ${port}/swagger`);
+    Logger.instance.success(`Server is running on port ${port}`);
+    Logger.instance.success(`Swagger available at http://localhost:${port}/swagger`);
   }
 }

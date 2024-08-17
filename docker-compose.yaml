@@ -17,6 +17,11 @@ services:
       WSRS_DATABASE_PORT: "5432"
       JWT_SECRET: "123456"
       URL_PUBLIC: http://localhost:8080/shortened/link
+    deploy:
+      resources:
+        limits:
+          cpus: 0.5
+          memory: 512M
   influxdb:
     image: influxdb:1.8
     networks:
@@ -38,17 +43,6 @@ services:
       - GF_AUTH_BASIC_ENABLED=false
     volumes:
       - ./grafana:/etc/grafana/provisioning/
-  k6:
-    
-    image: grafana/k6:latest
-    networks:
-      - k6
-    ports:
-      - "6565:6565"
-    environment:
-      - K6_OUT=influxdb=http://influxdb:8086/k6
-    volumes:
-      - ./examples:/scripts
   db:
     image: postgres:latest
     restart: unless-stopped
@@ -72,7 +66,6 @@ services:
       PGADMIN_DEFAULT_PASSWORD: 123
     volumes:
       - pgadmin:/var/lib/pgadmin
-
 volumes:
   db:
     driver: local

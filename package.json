@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": " tsnd --env-file=.env src/main.ts",
+    "dev": "tsnd --env-file=.env src/main.ts",
     "migrate": "ts-node src/utils/migration.ts",
-    "build": "npm run migrate && npx tsc",
+    "build": "npx tsc && npm run migrate",
+    "start": "node dist/src/main.js",
     "test": "jest --coverage",
-    "test-loader":"k6 run test/load/index.js"
+    "test-loader": "k6 run --out influxdb=http://localhost:8086/k6 test/load/index.js"
   },
   "keywords": [],
   "author": "",

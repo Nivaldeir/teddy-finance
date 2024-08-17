@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1723848596584" clover="3.2.0">
-  <project timestamp="1723848596584" name="All files">
-    <metrics statements="193" coveredstatements="171" conditionals="16" coveredconditionals="11" methods="59" coveredmethods="56" elements="268" coveredelements="238" complexity="0" loc="193" ncloc="193" packages="7" files="21" classes="21"/>
+<coverage generated="1723852609677" clover="3.2.0">
+  <project timestamp="1723852609677" name="All files">
+    <metrics statements="194" coveredstatements="172" conditionals="16" coveredconditionals="11" methods="59" coveredmethods="56" elements="269" coveredelements="239" complexity="0" loc="194" ncloc="194" packages="7" files="21" classes="21"/>
     <package name="src.core.domain.entities">
       <metrics statements="43" coveredstatements="43" conditionals="1" coveredconditionals="1" methods="9" coveredmethods="9"/>
       <file name="email.ts" path="/mnt/e/software-developer/testing/src/core/domain/entities/email.ts">
@@ -269,14 +269,15 @@
       </file>
     </package>
     <package name="test">
-      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="config.ts" path="/mnt/e/software-developer/testing/test/config.ts">
-        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="2" type="stmt"/>
         <line num="3" count="2" type="stmt"/>
         <line num="4" count="2" type="stmt"/>
         <line num="5" count="2" type="stmt"/>
         <line num="8" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
       </file>
     </package>
   </project>
