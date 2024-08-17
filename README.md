@@ -57,21 +57,21 @@ API está documentada com OPEN API ou Swagger
 - [x] Ter validação de entrada em todos os lugares necessários.
 - [x] Ter instrumentação de observabilidade (implementação real ou abstração) de um ou vários tipos: Logs, Métricas, Rastreamento
 
-- [] Dar deploy no ambiente em um cloud provider e expor no readme o link.
+- [-] Dar deploy no ambiente em um cloud provider e expor no readme o link.
 - [x] Deixar no README pontos de melhoria para caso o sistema necessite escalar horizontalmente e quais serão os maiores desafios.
 
-- [] Monorepo com separação de serviços como gerenciamento de identidade e acesso e regra de negócio de encurtar URL com comunicação entre os serviços. Obrigatório docker-compose neste cenário.
-- [] Configurar um api gateway como KrankeD na frente dos serviços.
-- [] Utilizar changelog com a realidade do seu desenvolvimento
-- [] Git tags definindo versões de release, por exemplo release 0.1.0 como encurtador criado, 0.2.0 como autenticação, 0.3.0 como operações de usuário no encurtador, 0.4.0 como contabilização de acessos.
-- [] Construir deployments do Kubernetes para deploy.
-- [] Construir artefatos do Terraform para deploy.
+- [-] Monorepo com separação de serviços como gerenciamento de identidade e acesso e regra de negócio de encurtar URL com comunicação entre os serviços. Obrigatório docker-compose neste cenário.
+- [-] Configurar um api gateway como KrankeD na frente dos serviços.
+- [-] Utilizar changelog com a realidade do seu desenvolvimento
+- [-] Git tags definindo versões de release, por exemplo release 0.1.0 como encurtador criado, 0.2.0 como autenticação, 0.3.0 como operações de usuário no encurtador, 0.4.0 como contabilização de acessos.
+- [-] Construir deployments do Kubernetes para deploy.
+- [-] Construir artefatos do Terraform para deploy.
 - [x] Construir github actions para lint e testes automatizados.
-- [x] Transformar o sistema em multi tenant.
-- [] Construir funcionalidades a mais que acredite ser interessante para o “domínio do negócio” da aplicação.
+- [-] Transformar o sistema em multi tenant.
+- [-] Construir funcionalidades a mais que acredite ser interessante para o “domínio do negócio” da aplicação.
 - [x] Definir e assegurar quais versões do NodeJS são aceitas no projeto.
-- [] Configurar pré commit ou pre push hooks.
-- [] Código tolerante a falhas.
+- [-] Configurar pré commit ou pre push hooks.
+- [-] Código tolerante a falhas.
 
 
 ## ✒️ Authors
