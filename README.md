@@ -1,6 +1,34 @@
 # Teste Tecnico backend Teddy Open Finance
-## O intuito é construir um sistema que encurte as URLs.
+## Objetivo
+Focado em um processo seletivo ao qual estou participando e este repositorio é com seu teste tecnico
 
+## Iniciando projeto
+.env
+```bash
+WSRS_DATABASE_PORT="5432"
+WSRS_DATABASE_NAME='wsrs'
+WSRS_DATABASE_USER="postgres"
+WSRS_DATABASE_PASSWORD='123456789'
+WSRS_DATABASE_HOST='localhost'
+
+JWT_SECRET="123456"
+
+URL_PUBLIC=http://localhost:8080/shortened/link
+```
+Iniciando com docker:
+```bash
+docker-compose up -d
+```
+## Documentação da API
+http://localhost:8080/swagger
+
+## Desafio escalar horizontalmente
+  - Balanceamento de carga (considerar nginx)
+  - Desacoplamento (considerar a implementação de uma mensageria)
+  - Cache (considerar implementação de cache)
+  - Gerenciamento de sessões
+
+## Desafio
 - [x] Deverá ser implementado um projeto com NodeJS na última versão estável, sendo construído como API REST. Leve em consideração que o sistema será implementado em uma infraestrutura que escala verticalmente.
 - [x] O sistema deve possibilitar o cadastro de usuários e autenticação dos mesmos.
 - [x] O sistema deve possibilitar que a partir de um url enviado, ele seja encurtado para no máximo 6 caracteres. Exemplo: Entrada: https://teddy360.com.br/material/marco-legal-das-garantias-sancionado-entenda-o-que-muda/ Saída: http://localhost/aZbKq7
@@ -27,10 +55,10 @@
 - [x] Ter testes unitários
 API está documentada com OPEN API ou Swagger
 - [x] Ter validação de entrada em todos os lugares necessários.
-- [] Ter instrumentação de observabilidade (implementação real ou abstração) de um ou vários tipos: Logs, Métricas, Rastreamento
+- [x] Ter instrumentação de observabilidade (implementação real ou abstração) de um ou vários tipos: Logs, Métricas, Rastreamento
 
 - [] Dar deploy no ambiente em um cloud provider e expor no readme o link.
-- [] Deixar no README pontos de melhoria para caso o sistema necessite escalar horizontalmente e quais serão os maiores desafios.
+- [x] Deixar no README pontos de melhoria para caso o sistema necessite escalar horizontalmente e quais serão os maiores desafios.
 
 - [] Monorepo com separação de serviços como gerenciamento de identidade e acesso e regra de negócio de encurtar URL com comunicação entre os serviços. Obrigatório docker-compose neste cenário.
 - [] Configurar um api gateway como KrankeD na frente dos serviços.
@@ -38,9 +66,13 @@ API está documentada com OPEN API ou Swagger
 - [] Git tags definindo versões de release, por exemplo release 0.1.0 como encurtador criado, 0.2.0 como autenticação, 0.3.0 como operações de usuário no encurtador, 0.4.0 como contabilização de acessos.
 - [] Construir deployments do Kubernetes para deploy.
 - [] Construir artefatos do Terraform para deploy.
-- [] Construir github actions para lint e testes automatizados.
-- [] Transformar o sistema em multi tenant.
+- [x] Construir github actions para lint e testes automatizados.
+- [x] Transformar o sistema em multi tenant.
 - [] Construir funcionalidades a mais que acredite ser interessante para o “domínio do negócio” da aplicação.
-- [] Definir e assegurar quais versões do NodeJS são aceitas no projeto.
+- [x] Definir e assegurar quais versões do NodeJS são aceitas no projeto.
 - [] Configurar pré commit ou pre push hooks.
 - [] Código tolerante a falhas.
+
+
+## ✒️ Authors
+[Nivaldeir](https://github.com/nivaldeir).
