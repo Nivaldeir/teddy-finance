@@ -1,27 +1,26 @@
 version: '3.8'
 
 services:
-  # teddy:
-  #   build: ./
-  #   restart: unless-stopped
-  #   ports:
-  #     - 8080:8080
-  #   depends_on:
-  #     - db
-  #   environment:
-  #     SRS_DATABASE_PORT: 5432
-  #     WSRS_DATABASE_NAME: 'wsrs'
-  #     WSRS_DATABASE_USER: "postgres"
-  #     WSRS_DATABASE_PASSWORD: '123456789'
-  #     WSRS_DATABASE_HOST: 'db'
-  #     WSRS_DATABASE_PORT: "5432"
-  #     JWT_SECRET: "123456"
-  #     URL_PUBLIC: http://localhost:8080/shortened/link
-  #   deploy:
-  #     resources:
-  #       limits:
-  #         cpus: 0.5
-  #         memory: 512M
+  teddy:
+    build: ./
+    restart: unless-stopped
+    ports:
+      - 8080:8080
+    depends_on:
+      - db
+    environment:
+      WSRS_DATABASE_USER: ${WSRS_DATABASE_USER}
+      WSRS_DATABASE_PASSWORD: ${WSRS_DATABASE_PASSWORD}
+      WSRS_DATABASE_NAME: ${WSRS_DATABASE_NAME}
+      SRS_DATABASE_PORT: 5432
+      WSRS_DATABASE_HOST: 'db'
+      JWT_SECRET: "123456"
+      URL_PUBLIC: http://localhost:8080/shortened/link
+    deploy:
+      resources:
+        limits:
+          cpus: 0.5
+          memory: 512M
   influxdb:
     image: influxdb:1.8
     networks:
