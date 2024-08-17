@@ -61,7 +61,7 @@ export class ShortenedDatabase implements IShortenedUrl {
   }
   async delete(id: string): Promise<void> {
     try {
-      await this.db.query(
+      const put = await this.db.query(
         "UPDATE public.shortened_urls SET deleted_at = NOW() WHERE id = $1",
         [id]
       );
@@ -72,7 +72,7 @@ export class ShortenedDatabase implements IShortenedUrl {
   }
   async findMany(userId: string): Promise<ShortenedUrl[]> {
     const shorteds = await this.db.query(
-      "SELECT * FROM public.shortened_urls WHERE user_id = $1",
+      "SELECT * FROM public.shortened_urls WHERE user_id = $1 AND deleted_at IS NULL",
       [userId]
     );
     return shorteds.map(

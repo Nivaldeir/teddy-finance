@@ -75,7 +75,7 @@ export default class ShortenedController extends HttpController {
   @Middlware.validateSchema(shortenedUrlsDelete)
   async delete(req: Request, res: Response) {
     const { id } = req.params;
-    const output = await this.factory.deleteUser.execute({ id });
+    const output = await this.factory.deleteUrl.execute({ id });
     res.send({
       message: "Sucesso",
       data: output,
