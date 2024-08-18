@@ -2,30 +2,28 @@ version: '3.8'
 
 services:
   teddy:
-    build: ./
+    build: .
     restart: unless-stopped
     ports:
       - 8080:8080
     depends_on:
       - db
+      - rabbitmq
+    networks:
+      - public
     environment:
       WSRS_DATABASE_USER: ${WSRS_DATABASE_USER}
       WSRS_DATABASE_PASSWORD: ${WSRS_DATABASE_PASSWORD}
       WSRS_DATABASE_NAME: ${WSRS_DATABASE_NAME}
-      SRS_DATABASE_PORT: 5432
+      WSRS_DATABASE_PORT: 5432
       WSRS_DATABASE_HOST: 'db'
+      RABBIT_MQ_HOST: 'amqp://rabbitmq'
       JWT_SECRET: "123456"
       URL_PUBLIC: http://localhost:8080/shortened/link
-    deploy:
-      resources:
-        limits:
-          cpus: 0.5
-          memory: 512M
   influxdb:
     image: influxdb:1.8
     networks:
-      - k6
-      - grafana
+      - public
     ports:
       - "8086:8086"
     environment:
@@ -33,7 +31,7 @@ services:
   grafana:
     image: grafana/grafana:9.3.8
     networks:
-      - grafana
+      - public
     ports:
       - "3000:3000"
     environment:
@@ -53,6 +51,8 @@ services:
       POSTGRES_DB: ${WSRS_DATABASE_NAME}
     volumes:
       - db:/var/lib/postgresql/data
+    networks:
+      - public
   pgadmin:
     image: dpage/pgadmin4:latest
     restart: unless-stopped
@@ -65,12 +65,21 @@ services:
       PGADMIN_DEFAULT_PASSWORD: 123
     volumes:
       - pgadmin:/var/lib/pgadmin
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    ports:
+      - 5672:5672
+      - 15672:15672
+    volumes:
+      - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
+      - ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
+    networks:
+      - public
+
 volumes:
   db:
-    driver: local
   pgadmin:
-    driver: local
 
 networks:
-  k6:
-  grafana:
+  public:
+    driver: bridge

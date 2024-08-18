@@ -11,7 +11,7 @@ type IUser = {
 };
 
 type IUserCreate = {
-  username: string;
+  username?: string;
   email: string;
   password: string;
 };

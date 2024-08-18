@@ -16,7 +16,7 @@ import { DeleteUrl } from "../../src/core/domain/usecase/url/delete-url";
 import { FindUrlByLink } from "../../src/core/domain/usecase/url/find-url-by-link";
 import { FindUrlMany } from "../../src/core/domain/usecase/url/find-url-many";
 
-describe("User", () => {
+describe("Shortened", () => {
   let postgresContainer: StartedPostgreSqlContainer;
   let postgresClient: PgAdapter<IShortenedUrl>;
   beforeAll(async () => {

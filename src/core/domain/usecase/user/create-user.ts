@@ -17,7 +17,7 @@ export class CreateUser {
 type Input = {
   email: string;
   password: string;
-  username: string;
+  username?: string;
 };
 type Ouput = {
   deleteAt?: Date | null;
